@@ -1,0 +1,126 @@
+# React Project Structure Rules for Senior Development
+
+## Component Organization
+- Each component should be in its own folder
+- Component folders should contain the component's own styling
+- Component folders should contain all hooks used by the component
+- Subcomponents that are only used by one component should be placed inside that component's folder
+- File structure should follow this pattern:
+  ```
+  src/components/ComponentName/
+    ├── ComponentName.jsx
+    ├── ComponentName.css
+    ├── hooks/
+    │   └── useComponentSpecificHook.js
+    ├── components/
+    │   └── SubComponent/
+    │       ├── SubComponent.jsx
+    │       ├── SubComponent.css
+    │       ├── hooks/
+    │       │   └── useSubComponentHook.js
+    │       └── index.js
+    └── index.js
+  ```
+
+## Documentation Requirements
+- All files (except styling files) must include a prologue comment
+- The prologue should contain:
+  1. Description of what the file does
+  2. List of components this file uses
+  3. List of hooks this file uses
+  4. List of utilities/functions this file uses
+
+## Prologue Template
+```jsx
+/**
+ * @file ComponentName.jsx
+ * @description Brief description of what this component does
+ * 
+ * @dependencies
+ * - Components: List of components used
+ * - Hooks: List of hooks used
+ * - Utilities: List of utility functions used
+ */
+```
+
+## Example Component Structure
+```
+src/components/TodoList/
+  ├── TodoList.jsx
+  ├── TodoList.css
+  ├── hooks/
+  │   ├── useTodoFilters.js
+  │   └── useTodoSort.js
+  ├── components/
+  │   └── TodoItem/
+  │       ├── TodoItem.jsx
+  │       ├── TodoItem.css
+  │       ├── hooks/
+  │       │   └── useItemState.js
+  │       └── index.js
+  └── index.js
+```
+
+## Example Prologue
+```jsx
+/**
+ * @file TodoList.jsx
+ * @description A component that displays a list of todo items with filtering and sorting capabilities
+ * 
+ * @dependencies
+ * - Components: TodoItem, FilterBar, SortControls
+ * - Hooks: useTodoFilters, useTodoSort, useState, useEffect
+ * - Utilities: formatDate, priorityColors
+ */
+```
+
+## Code Quality Standards
+- Use TypeScript for type safety and better IDE support
+- Implement proper error boundaries and fallback UIs
+- Follow the principle of single responsibility for components and functions
+- Prefer functional components with hooks over class components
+- Use React.memo, useCallback, and useMemo for performance optimization when appropriate
+- Implement proper prop validation with PropTypes or TypeScript interfaces
+- Avoid prop drilling by using Context API or state management libraries when needed
+- Write self-documenting code with meaningful variable and function names
+- Keep components small and focused (under 250 lines of code)
+- Extract complex logic into custom hooks
+
+## Architecture Principles
+- Implement feature-based folder structure for larger applications
+- Use container/presentational pattern to separate logic from UI
+- Implement proper state management architecture (Context API, Redux, Zustand, etc.)
+- Create abstraction layers for API calls and external services
+- Use environment variables for configuration
+- Implement proper routing with code-splitting
+- Create reusable UI component library
+- Follow atomic design principles where appropriate
+
+## Performance Considerations
+- Implement code-splitting and lazy loading for routes and large components
+- Use windowing/virtualization for long lists (react-window, react-virtualized)
+- Optimize bundle size with proper tree-shaking and code-splitting
+- Implement proper memoization strategies
+- Use web workers for CPU-intensive tasks
+- Implement proper caching strategies for API calls
+- Optimize images and assets
+- Use performance monitoring tools
+
+## Advanced React Patterns
+- Implement compound components for complex UI components
+- Use render props pattern for sharing behavior
+- Implement controlled vs. uncontrolled components appropriately
+- Use higher-order components when appropriate
+- Implement custom hooks for shared logic
+- Use React Context effectively for theming and global state
+- Implement proper state machines for complex state logic
+
+## Testing Requirements
+- Write unit tests for all utility functions
+- Implement component tests with React Testing Library
+- Use snapshot testing judiciously
+- Implement integration tests for critical user flows
+- Use mock service worker for API mocking
+- Implement end-to-end tests for critical paths
+- Maintain test coverage above 80%
+- Write tests that focus on behavior, not implementation details
