@@ -4,25 +4,25 @@
  * Include information about:
  * - Main layout and structure of the application
  * - Integration of TaskContext provider
- * - Composition of TaskForm and TaskList components
+ * - Composition of TaskForm and KanbanBoard components
  * - Overall application state management
  *
  * @dependencies
- * - Components: TaskForm, TaskList
+ * - Components: TaskForm, KanbanBoard
  * - Hooks: useState from React
  * - Context: TaskProvider from TaskContext
  * - Utilities: None
  *
  * @implementation
  * This component implements the main layout of the application, including the header,
- * task form, and task list. It uses the TaskProvider to provide global state management
+ * task form, and kanban board. It uses the TaskProvider to provide global state management
  * for tasks throughout the application.
  */
 
 import { useState } from "react";
 import { TaskProvider } from "../../context/TaskContext";
 import { TaskForm } from "../TaskForm";
-import { TaskList } from "../TaskList";
+import { KanbanBoard } from "../KanbanBoard";
 import "./App.css";
 
 export const App = () => {
@@ -57,7 +57,7 @@ export const App = () => {
                         </div>
                     )}
 
-                    <TaskList />
+                    <KanbanBoard />
                 </main>
 
                 <footer className="app-footer">

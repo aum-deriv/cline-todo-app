@@ -20,6 +20,7 @@ export interface Task {
   description: string;
   deadline: Date;
   completed: boolean;
+  status: 'todo' | 'inProgress' | 'done';
   createdAt: Date;
   updatedAt: Date;
 }

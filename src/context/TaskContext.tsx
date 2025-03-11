@@ -41,6 +41,7 @@ interface TaskContextType {
     ) => void;
     deleteTask: (id: string) => void;
     completeTask: (id: string, completed: boolean) => void;
+    moveTask: (id: string, newStatus: "todo" | "inProgress" | "done") => void;
 }
 
 // Create the context with a default value
@@ -111,6 +112,20 @@ export const TaskProvider = ({ children }: TaskProviderProps) => {
         );
     };
 
+    // Move task to a different status column
+    const moveTask = (
+        id: string,
+        newStatus: "todo" | "inProgress" | "done"
+    ) => {
+        setTasks((prevTasks) =>
+            prevTasks.map((task) =>
+                task.id === id
+                    ? { ...task, status: newStatus, updatedAt: new Date() }
+                    : task
+            )
+        );
+    };
+
     // Context value
     const value = {
         tasks,
@@ -118,6 +133,7 @@ export const TaskProvider = ({ children }: TaskProviderProps) => {
         updateTask,
         deleteTask,
         completeTask,
+        moveTask,
     };
 
     return (

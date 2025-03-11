@@ -99,6 +99,7 @@ export const TaskForm = ({ task, onSubmit, onCancel }: TaskFormProps) => {
                 description,
                 deadline: deadlineDate,
                 completed: false,
+                status: "todo", // Default status for new tasks
             });
         }
 

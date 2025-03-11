@@ -1,0 +1,128 @@
+/**
+ * DraggableTaskItem component styles
+ */
+
+.draggable-task-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+  border-left: 4px solid #3b82f6;
+  cursor: grab;
+}
+
+.draggable-task-item--dragging {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+
+.draggable-task-item--completed {
+  border-left-color: #10b981;
+  opacity: 0.8;
+}
+
+.draggable-task-item--completed .draggable-task-item__title {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.draggable-task-item__header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.draggable-task-item__checkbox-container {
+  margin-right: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+.draggable-task-item__checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.draggable-task-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.draggable-task-item__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  word-break: break-word;
+}
+
+.draggable-task-item__meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.draggable-task-item__deadline {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.draggable-task-item__deadline--overdue {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.draggable-task-item__deadline--today {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.draggable-task-item__deadline--approaching {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.draggable-task-item__description {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0.5rem 0 0 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.draggable-task-item__expand-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.draggable-task-item__expand-icon {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.draggable-task-item__expand-icon--expanded {
+  transform: rotate(180deg);
+}
+
+.draggable-task-item__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}

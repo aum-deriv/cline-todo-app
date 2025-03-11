@@ -49,14 +49,21 @@ export const getTasks = (): Task[] => {
       return [];
     }
     
-    // Convert ISO strings back to Date objects
+    // Convert ISO strings back to Date objects and handle migration for status field
     const parsedTasks = JSON.parse(tasksJson);
-    return parsedTasks.map((task: any) => ({
-      ...task,
-      deadline: new Date(task.deadline),
-      createdAt: new Date(task.createdAt),
-      updatedAt: new Date(task.updatedAt)
-    }));
+    return parsedTasks.map((task: any) => {
+      // Migrate tasks that don't have a status field
+      if (!task.status) {
+        task.status = task.completed ? 'done' : 'todo';
+      }
+      
+      return {
+        ...task,
+        deadline: new Date(task.deadline),
+        createdAt: new Date(task.createdAt),
+        updatedAt: new Date(task.updatedAt)
+      };
+    });
   } catch (error) {
     console.error('Error retrieving tasks from localStorage:', error);
     return [];
