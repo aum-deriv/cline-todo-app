@@ -1,0 +1,107 @@
+/**
+ * Button component styles
+ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button variants */
+.button--primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.button--primary:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.button--secondary {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background-color: #d1d5db;
+}
+
+.button--danger {
+  background-color: #ef4444;
+  color: white;
+}
+
+.button--danger:hover:not(:disabled) {
+  background-color: #dc2626;
+}
+
+.button--success {
+  background-color: #10b981;
+  color: white;
+}
+
+.button--success:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+/* Button sizes */
+.button--small {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.button--medium {
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+.button--large {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Full width button */
+.button--full-width {
+  width: 100%;
+}
+
+/* Disabled state */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading state */
+.button--loading {
+  cursor: wait;
+}
+
+.button__loading-indicator {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+.button__text--loading {
+  visibility: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

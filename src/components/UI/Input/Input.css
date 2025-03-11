@@ -1,0 +1,86 @@
+/**
+ * Input component styles
+ */
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-container--full-width {
+  width: 100%;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #374151;
+}
+
+.input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+/* Input variants */
+.input--default {
+  border: 1px solid #d1d5db;
+  background-color: white;
+}
+
+.input--default:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.input--filled {
+  border: 1px solid transparent;
+  background-color: #f3f4f6;
+}
+
+.input--filled:focus {
+  background-color: #e5e7eb;
+  border-color: #3b82f6;
+}
+
+.input--outlined {
+  border: 1px solid #d1d5db;
+  background-color: transparent;
+}
+
+.input--outlined:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Full width input */
+.input--full-width {
+  width: 100%;
+}
+
+/* Error state */
+.input--error {
+  border-color: #ef4444 !important;
+}
+
+.input--error:focus {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2) !important;
+}
+
+.input-error {
+  font-size: 0.75rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+/* Disabled state */
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #f3f4f6;
+}
